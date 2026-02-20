@@ -20,7 +20,7 @@ app.use(express.static('public'));
 // app.use(checkTime);
 
 // rotta home APP
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.send("<h1>Rotta di home della nostra App dei libri</h1>")
 })
 

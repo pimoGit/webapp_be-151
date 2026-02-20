@@ -1,14 +1,16 @@
 {
-  "name": "webapp_be-151",
-  "version": "1.0.0",
-  "description": "parte BE della nostra webapp completa",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "classe 151",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^5.2.1"
-  }
+    "name": "webapp_be-151",
+    "version": "1.0.0",
+    "description": "parte BE della nostra webapp completa",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js",
+        "watch": "node --watch app.js"
+    },
+    "author": "classe 151",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^5.2.1"
+    }
 }
