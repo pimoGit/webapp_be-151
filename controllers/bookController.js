@@ -3,8 +3,14 @@ const connection = require('../data/db');
 
 // funzione di index
 function index(req, res) {
-    // fai cose
-    console.log("hai richiesto la index");
+    // prepariamo la query
+    const sql = 'SELECT * FROM books';
+
+    // eseguiamo la query!
+    connection.query(sql, (err, results) => {
+        if (err) return res.status(500).json({ error: 'Database query failed' });
+        res.json(results);
+    });
 
 }
 
