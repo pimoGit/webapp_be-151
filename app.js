@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT;
 
+// import del router dei libri
+const bookRouter = require('./routers/bookRouter');
+
 // import del middelware di gestione errore interno 500
 const errorsHandler = require("./middlewares/errorsHandler");
 // import del middelware di gestione di rotta inesistente
@@ -23,6 +26,9 @@ app.use(express.static('public'));
 app.get('/api', (req, res) => {
     res.send("<h1>Rotta di home della nostra App dei libri</h1>")
 })
+
+// rotte relative al router dei libri
+app.use('/api/books', bookRouter);
 
 // registrazione middleware su router specifico
 // app.use("/pizzas", checkTime)
