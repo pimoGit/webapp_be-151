@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 // import del middelware di gestione errore interno 500
 const errorsHandler = require("./middlewares/errorsHandler");
