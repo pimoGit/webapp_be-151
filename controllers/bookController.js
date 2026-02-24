@@ -9,7 +9,16 @@ function index(req, res) {
     // eseguiamo la query!
     connection.query(sql, (err, results) => {
         if (err) return res.status(500).json({ error: 'Database query failed' });
-        res.json(results);
+
+        // creo una copia dei risultati con modifica path imgs
+        const books = results.map(book => {
+            return {
+                ...book,
+                image: req.imagePath + book.image
+            }
+        })
+
+        res.json(books);
     });
 
 }

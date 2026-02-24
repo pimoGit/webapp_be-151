@@ -18,9 +18,14 @@ const bookRouter = require('./routers/bookRouter');
 const errorsHandler = require("./middlewares/errorsHandler");
 // import del middelware di gestione di rotta inesistente
 const notFound = require("./middlewares/notFound");
+// import del middelware di gestione di path imgs
+const imagePathMiddleware = require("./middlewares/imagePath");
 
 // importa router delle pizze
 // const pizzasRouter = require('./routers/pizzas');
+
+// attivazioone middelware di gestione di path imgs
+app.use(imagePathMiddleware);
 
 // attivazione della cartella public per uso file statici
 app.use(express.static('public'));
