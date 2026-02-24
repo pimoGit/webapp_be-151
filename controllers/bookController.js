@@ -40,6 +40,8 @@ function show(req, res) {
 
         // salviamo il risultato in una cost
         const book = bookResults[0];
+        // aggiungo path img dal middleware
+        book.image = req.imagePath + book.image;
 
         // chiamata a DB secondaria per recupero reviews del libro
         connection.query(reviewsSql, [id], (err, reviewsResults) => {
