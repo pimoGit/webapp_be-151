@@ -21,8 +21,6 @@ const notFound = require("./middlewares/notFound");
 // import del middelware di gestione di path imgs
 const imagePathMiddleware = require("./middlewares/imagePath");
 
-// importa router delle pizze
-// const pizzasRouter = require('./routers/pizzas');
 
 // attivazioone middelware di gestione di path imgs
 app.use(imagePathMiddleware);
@@ -31,7 +29,7 @@ app.use(imagePathMiddleware);
 app.use(express.static('public'));
 
 // registro il body-parser per "application/json"...
-// app.use(express.json());
+app.use(express.json());
 
 // registro middleware checkTime
 // app.use(checkTime);

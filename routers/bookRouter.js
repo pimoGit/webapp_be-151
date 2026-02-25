@@ -14,4 +14,7 @@ router.get('/', bookController.index);
 // rotta di show
 router.get('/:id', bookController.show);
 
+// rotta di create recensione
+router.post('/:id/reviews', bookController.storeReview);
+
 module.exports = router;

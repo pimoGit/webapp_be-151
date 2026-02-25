@@ -59,4 +59,25 @@ function show(req, res) {
     });
 }
 
-module.exports = { index, show }
+// funzione per lo store della review
+function storeReview(req, res) {
+
+    // recuperiamo id da param dinamico
+    const { id } = req.params;
+
+    // recuperiamo le info dal body della req
+    const { name, vote, text } = req.body;
+
+    // settiamo Sql di richiesta al DB
+    const sql = 'INSERT INTO reviews (text, name, vote, book_id) VALUES (?, ?, ?, ?)';
+
+    // Eseguiamo la query
+    connection.query(sql, [text, name, vote, id], (err, results) => {
+        if (err) return res.status(500).json({ error: 'Database query failed' });
+        res.status(201);
+        res.json({ message: 'Review added', id: results.insertId });
+    });
+}
+
+
+module.exports = { index, show, storeReview }
